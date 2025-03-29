@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pokémon Card Search</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h1>Pokémon Card Search</h1>
+    <div class="form-container">
+      <form id="search-form">
+        <input type="text" id="search-input" placeholder="Enter Pokémon name" />
+        <button type="submit">Search</button>
+        <button type="button" id="filter-button">Filter</button>
+        <button type="button" id="custom-button">Custom</button>
+        <!-- Removed inline custom-sql input -->
+      </form>
+      <div id="filter-panel" style="display: none">
+        <div class="filter-panel-header">
+          <strong>Filter Panel</strong>
+          <button type="button" id="reset-filters-button">Reset</button>
+        </div>
+        <select id="filter1">
+          <option value="">Select Card Type</option>
+          <!-- Card types will be populated dynamically -->
+        </select>
+        <select id="filter2">
+          <option value="">Select Type</option>
+          <!-- Types will be populated dynamically -->
+        </select>
+        <select id="filter3">
+          <option value="">Select Sub-Type</option>
+          <!-- Subtypes will be populated dynamically -->
+        </select>
+        <select id="filter4">
+          <option value="">Select Set</option>
+          <!-- Sets will be populated dynamically -->
+        </select>
+        <select id="filter5">
+          <option value="">Select Format</option>
+          <!-- Formats will be populated dynamically with optgroups -->
+        </select>
+        <select id="filter6">
+          <option value="">Select Artist</option>
+          <!-- Artists will be populated dynamically -->
+        </select>
+        <select id="filter7">
+          <option value="">Select Rarity</option>
+          <!-- Rarities will be populated dynamically -->
+        </select>
+      </div>
+    </div>
+    <!-- New modal overlay for custom SQL query -->
+    <div id="custom-modal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <button type="button" id="close-modal">X</button>
+        <textarea id="custom-sql-modal" placeholder="Enter custom SQL query"></textarea>
+        <!-- Add buttons for create, drop, and populate -->
+        <div class="custom-buttons">
+          <button id="create-button">Create</button>
+          <button id="drop-button">Drop</button>
+          <button id="populate-button">Populate</button>
+        </div>
+      </div>
+    </div>
+    <p id="search-summary"></p>
+    <div class="results" id="results">
+      <!-- Cards will be loaded here -->
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>

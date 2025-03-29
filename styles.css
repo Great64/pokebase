@@ -1,0 +1,576 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    padding: 20px;
+    color: #333;
+}
+
+h1 {
+    color: #222;
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Centre Search Bar */
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Add some space between elements */
+}
+
+/* Search Bar */
+input[type="text"] {
+    width: 50%; 
+    padding: 10px; 
+    margin: 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.results {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1200px; /* Adjust the max-width as needed */
+    margin: 30px auto; /* Center the grid */
+}
+
+.card {
+    /*border: 1px solid #ddd;*/
+    border-radius: 8px;
+    padding: 0px;
+    margin: 10px 0;
+    background-color: transparent;
+    /*box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);*/
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h2 {
+    font-size: 2em;
+    margin: 10px 0;
+    color: #007bff;
+}
+
+.card-details-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: nowrap !important; /* Force no wrapping */
+}
+
+.card-details-left {
+    flex: 0 0 330px !important; /* Fixed width, don't grow or shrink */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: auto !important; /* Reset min-width */
+}
+
+.card-details-right {
+    flex: 1 !important; /* Take up remaining space */
+    min-width: 0 !important; /* Prevent min-width from causing wrapping */
+}
+
+.card-large-image {
+    width: 100%; /* Full width of the container */
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+}
+
+.card-name {
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 0 0 12px 0;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 6px;
+}
+
+.card-id-line, 
+.card-type-line, 
+.card-stats-line,
+.card-meta-line {
+    font-size: 1.1rem;
+    margin-bottom: 14px;
+    line-height: 1.4;
+    padding: 5px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+#return-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 10px;
+    width: 100%; /* Full width of left column */
+}
+
+.card-details-info h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.card-details-info p,
+.card-details-info ul {
+    margin-bottom: 10px;
+}
+
+.card-details-info ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card-details-info ul li {
+    margin-bottom: 5px;
+}
+
+#return-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-top: 20px;
+}
+
+#return-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.card-details-right h3 {
+    margin: 22px 0 14px 0;
+    font-size: 1.4rem;
+    color: #333;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 8px;
+}
+
+.card-attacks h3, .card-abilities h3:first-child {
+    margin-top: 10px;
+}
+
+.card-attacks, .card-abilities, .card-rules {
+    margin-bottom: 25px;
+}
+
+.card-rules {
+    background-color: #fffaed;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #fdcb6e;
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+/* Filter button */
+
+.form-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+#filter-button {
+    position: relative;
+}
+
+#filter-panel {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto repeat(4, auto); /* Changed to properly account for header and dropdowns */
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 350px;
+    max-width: 90vw;
+    box-sizing: border-box;
+}
+
+.filter-panel-header {
+    grid-column: 1 / span 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.filter-panel-header strong {
+    font-size: 1.1em;
+    color: #007bff;
+}
+
+#reset-filters-button {
+    padding: 5px 10px;
+    font-size: 0.85em;
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+#reset-filters-button:hover {
+    background-color: #e9ecef;
+}
+
+/* Fix for select elements positioning */
+#filter-panel select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.85em;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    margin: 2px 0;
+}
+
+/* Styling for option groups in filter dropdowns */
+#filter-panel select optgroup {
+    font-weight: bold;
+    font-style: normal;
+    color: #007bff;
+    padding: 5px 0;
+}
+
+#filter-panel select option {
+    font-weight: normal;
+    padding-left: 10px;
+}
+
+/* Adjust the 7th filter (rarity) to span both columns if needed */
+#filter-panel select:nth-child(8) { /* Changed from 7 to 8 because of the header div */
+    grid-column: 1 / span 2;
+    width: 80%;
+    margin: 5px auto;
+}
+
+#filter-panel select:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+#loading-indicator {
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2em;
+    color: #007bff;
+}
+
+#scroll-trigger {
+    width: 100%;
+    height: 100px; /* Make it taller for better detection */
+    margin-top: 20px;
+    grid-column: 1 / -1; /* Make it span full width in grid */
+    opacity: 0.5; /* Make it slightly visible for debugging */
+}
+
+/* New card details styles */
+.card-header {
+    margin-bottom: 20px;
+}
+
+.card-header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.card-subtitle {
+    color: #666;
+    font-size: 1.2em;
+    margin-top: 5px;
+}
+
+.card-info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    background-color: #f8f9fa;
+    padding: 10px 15px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.info-label {
+    font-size: 0.85em;
+    color: #666;
+    margin-bottom: 4px;
+}
+
+.info-value {
+    font-weight: bold;
+    color: #333;
+}
+
+.card-attacks, .card-abilities, .card-rules {
+    margin-bottom: 30px;
+}
+
+.attack, .ability {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.attack-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.attack-name {
+    font-weight: bold;
+    font-size: 1.2em;
+    margin-right: auto;
+}
+
+.attack-damage {
+    font-weight: bold;
+    color: #e74c3c;
+}
+
+.attack-cost {
+    margin-right: 10px;
+}
+
+.attack-text, .ability-text {
+    color: #555;
+    line-height: 1.5;
+}
+
+.ability-name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.ability-type {
+    background-color: #007bff;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 0.8em;
+    margin-left: 10px;
+}
+
+.card-legalities {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.legality-badge {
+    padding: 5px 10px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    text-transform: capitalize;
+}
+
+.legality-badge.legal {
+    background-color: #2ecc71;
+    color: white;
+}
+
+.legality-badge.banned {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.energy-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+#return-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: all 0.3s;
+    margin-top: 10px;
+    width: 100%;
+    max-width: 300px;
+}
+
+#return-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* Modal overlay styling */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+/* Modal content styling */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 80%;
+    max-width: 600px;
+    position: relative;
+    text-align: center; /* Center content inside modal */
+}
+
+/* Close button styling */
+#close-modal {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent; /* Remove red background */
+    color: black;           /* Make the X black */
+    border: none;           /* Remove border */
+    cursor: pointer;
+    font-size: 1.2em;
+    /* Removed fixed width/height and centering properties */
+}
+
+/* Multiline textarea styling inside modal */
+#custom-sql-modal {
+    width: 90%;
+    height: 200px;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    resize: vertical;
+    display: block;      /* Center horizontally */
+    margin: 20px auto 0 auto;
+}
+
+/* Buttons inside custom modal */
+.custom-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.custom-buttons button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-buttons button:hover {
+    background-color: #0056b3;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+    .card-details-container {
+        flex-direction: column;
+    }
+    
+    .card-details-left, .card-details-right {
+        min-width: 100%;
+    }
+}
+
+@media (max-width: 900px) {
+    .card-details-container {
+        flex-direction: column;
+    }
+    
+    .card-details-left {
+        width: 100%;
+        max-width: 330px;
+        margin: 0 auto 20px;
+    }
+    
+    .card-details-right {
+        padding: 0;
+    }
+}
