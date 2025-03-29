@@ -22,7 +22,7 @@ Python (v3.9 or higher)
 
 ### Installation
 
-1. Get a free API Key from [here]([https://example.com](https://dev.pokemontcg.io/dashboard))
+1. Get a free API Key from https://dev.pokemontcg.io
 2. Clone the repo
    ```sh
    git clone https://github.com/Great64/pokebase.git
