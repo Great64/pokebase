@@ -53,7 +53,7 @@ Python (v3.9 or higher)
    ```
    pip install mysql-connector-python requests prettytable python-dateutil
    ```
-6. Make sure your menu.py and ssed4.py details match those in
+6. Make sure your menu.py and seed4.py details match those in
    ```
    def create_connection():
     try:
