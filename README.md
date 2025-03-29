@@ -33,7 +33,7 @@ Python (v3.9 or higher)
    ```
 4. Setup a MySQL Database
    Install and configure MySQL if you haven't already
-   Create a database named pokebase:
+   and create a database named pokebase:
    ```
    CREATE DATABASE pokebase;
    ```
