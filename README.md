@@ -13,27 +13,30 @@ Final assignment for CP363 (Database I), where we took a MySQL database and link
 ### Prerequisites
 
 This guide will help you set up and run the PokeBase website locally.
-
+</br>
+</br>
+Ensure you have the dependencies listed below:
 ```
 Node.js (v14 or higher)
 MySQL (v8.0 recommended)
 Python (v3.9 or higher)
 ```
-
 ### Installation
 
 1. Get a free API Key from https://dev.pokemontcg.io
 2. Clone the repo
-   ```sh
+   ```
    git clone https://github.com/Great64/pokebase.git
    ```
 3. Install NPM packages
-   ```sh
+   ```
    npm install
    ```
-4. Setup a MySQL Database
-   Install and configure MySQL if you haven't already
-   and create a database named pokebase:
+4. Setup a MySQL database by installing the MySQL Community Server and MySQL Workbench from
+   https://dev.mysql.com/downloads/
+   </br>
+   </br>
+   Create a database named pokebase:
    ```
    CREATE DATABASE pokebase;
    ```
@@ -71,8 +74,10 @@ Python (v3.9 or higher)
    ```
    API_KEY= // Your api key
    ```
-
-8. Locally host your MySQL server in the backend
+8. Populate your MySQL database by running menu.py and executing each option in order
+   </br>
+   </br>
+9. Locally host your MySQL server
    ```
    npm init -y
    ```
@@ -83,8 +88,7 @@ Python (v3.9 or higher)
    node server.js
    ```
 
-9. Host your front end
-   Few ways to do this, my preferred method is using the live server vscode plugin
+10. Host your front end (my preferred method is using the live server vscode plugin)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
